@@ -45,7 +45,7 @@ cd seu-repositorio
 2. Execute o script no terminal ou prompt de comando:
 
 ```sh
-python nome_do_arquivo.py
+python downloader.py
 ```
 
 3. Cole os links dos vídeos ou playlists do YouTube quando solicitado.
@@ -61,7 +61,6 @@ Se encontrar erros durante o download:
   ```sh
   pip install --upgrade yt-dlp pillow eyed3 requests
   ```
-- Caso problemas persistam, crie uma issue neste repositório.
 
 ## 📜 Licença
 
