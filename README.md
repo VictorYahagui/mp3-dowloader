@@ -9,6 +9,12 @@ Este script permite baixar áudios de vídeos ou playlists do YouTube e salvar n
 - Baixa e adiciona automaticamente a thumbnail do vídeo como capa do MP3.
 - Garante que os arquivos sejam salvos no caminho especificado.
 
+## 📌 Feat 01/04/2025
+
+- Adicionado data e horario atual
+- Adicionado forma para baixar o video
+- Adicionado perguntas para baixar o Mp4 podendo ser selecionado em (quality:. MKV/AV1/VP9) e (Compatibility:. MP4/H.264) se o video não possuir o MP4/H.264 ele ira baixar a maior qualidade do video
+
 ## 🛠️ Instalação
 
 ### 1. Instalar o Python
