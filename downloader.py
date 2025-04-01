@@ -106,7 +106,7 @@ def download_mp4(video_url, save_path, index, total, preference='compatibility')
     try:
         print(f"🎬 ({index}/{total}) Downloading video ({preference} mode): {video_url}")
         
-        # Configurações base
+        # Base Config
         base_options = {
             'outtmpl': os.path.join(save_path, '%(title)s.%(ext)s'),
             'writethumbnail': True,
@@ -121,10 +121,10 @@ def download_mp4(video_url, save_path, index, total, preference='compatibility')
         }
 
         if preference == 'compatibility':
-            # Ordem de prioridade para compatibilidade:
-            # 1. MP4 com H.264
-            # 2. Qualquer MP4
-            # 3. Melhor formato disponível (fallback)
+            # Priority Order:
+            # 1. MP4 with H.264
+            # 2. Any MP4
+            # 3. Best available format (fallback)
             format_selector = (
                 'bestvideo[ext=mp4][vcodec^=avc]+bestaudio[ext=m4a]/'
                 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/'
@@ -136,7 +136,7 @@ def download_mp4(video_url, save_path, index, total, preference='compatibility')
                 'preferedformat': 'mp4',
             })
         else:
-            # Modo qualidade máxima
+            # Max quality
             format_selector = 'bestvideo+bestaudio/best'
 
         video_options = {**base_options, 'format': format_selector}
@@ -145,7 +145,7 @@ def download_mp4(video_url, save_path, index, total, preference='compatibility')
             info = ydl.extract_info(video_url, download=True)
             title = info.get('title', 'Unknown')
 
-        # Verifica o arquivo baixado
+        # Verify the downloaded file
         downloaded_files = [f for f in os.listdir(save_path) if f.startswith(title)]
         if downloaded_files:
             final_path = os.path.join(save_path, downloaded_files[0])
